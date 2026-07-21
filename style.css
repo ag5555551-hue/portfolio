@@ -1,0 +1,160 @@
+/* ==========================================
+          1. GOOGLE FONT
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================
+           2. CSS VARIABLES
+========================================== */
+:root{
+
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+
+  --bg:#ffffff;
+  --bg-secondary:#f8fafc;
+
+  --text:#0f172a;
+  --text-light:#64748b;
+
+  --border:#e2e8f0;
+
+  --success:#16a34a;
+  --danger:#dc2626;
+
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+
+  --radius:16px;
+
+  --transition:.3s ease;
+
+  --container:1200px;
+
+  --navbar-height:72px;
+}
+
+/* Dark Theme */
+[data-theme="dark"]{
+
+  --bg:#0f172a;
+  --bg-secondary:#1e293b;
+
+  --text:#f8fafc;
+  --text-light:#cbd5e1;
+
+  --border:#334155;
+
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ==========================================
+              3. RESET
+========================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  transition:var(--transition);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+ul{
+  list-style:none;
+}
+
+/* ==========================================
+           4. COMMON CLASSES
+========================================== */
+
+.container{
+  width:min(90%,var(--container));
+  margin:auto;
+}
+
+section{
+  padding:100px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:2.2rem;
+  margin-bottom:12px;
+}
+
+.section-title p{
+  color:var(--text-light);
+}
+
+/* ==========================================
+              5. BUTTONS
+========================================== */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:14px 28px;
+
+  border:none;
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-weight:600;
+
+  transition:var(--transition);
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--primary-dark);
+  transform:translateY(-3px);
+}
+
+.btn-secondary{
+  border:2px solid var(--primary);
+  color:var(--primary);
+  background:transparent;
+}
+
+.btn-secondary:hover{
+  background:var(--primary);
+  color:#fff;
+}
+
+
