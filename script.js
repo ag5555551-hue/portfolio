@@ -99,3 +99,22 @@ document.body.style.overflow = "";
 });
 }
 })();
+
+
+/*============================================
+         5. SCROLL REVEAL ANIMATIONS
+============================================ */
+(function initScrollReveal() {
+const prefersReduced =
+window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (prefersReduced) {
+qsa(".reveal").forEach(el => {
+el.classList.add("visible");
+});
+return;
+}
+const options = {
+root: null,
+rootMargin: "0px 0px -80px 0px",
+threshold: 0.12
+};
