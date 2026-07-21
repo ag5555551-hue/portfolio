@@ -334,7 +334,7 @@ display:flex;
 gap:20px;
 flex-wrap:wrap;
 }
-/* Right Card 
+/* Right Card */
 .hero__card{
 background:var(--bg-secondary);
 border:1px solid var(--border);
