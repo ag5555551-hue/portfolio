@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 /* ==========================================
            2. CSS VARIABLES
-========================================== 
+========================================== */
 :root{
 
   --primary:#2563eb;
@@ -32,7 +32,7 @@
   --navbar-height:72px;
 }
 
-/* Dark Theme 
+/* Dark Theme */
 [data-theme="dark"]{
 
   --bg:#0f172a;
