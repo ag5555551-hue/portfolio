@@ -352,7 +352,7 @@ el: qs("#message"),
 errEl: qs("#messageError")
 }
 };
-/* Real-time Validation */
+/* Real-time Validation 
 Object.values(fields).forEach(({ el, errEl }) => {
 if (!el) return;
 el.addEventListener("blur", () => {
@@ -395,7 +395,7 @@ el.textContent = new Date().getFullYear();
 (function initTiltEffect() {
 const card = qs(".hero__card");
 if (!card) return;
-/* Disable on touch devices */
+/* Disable on touch devices 
 if (window.matchMedia("(pointer: coarse)").matches) return;
 card.addEventListener("mousemove", (e) => {
 const rect = card.getBoundingClientRect();
