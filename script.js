@@ -146,3 +146,42 @@ setTimeout(tick, TYPE_SPEED);
 }
 setTimeout(tick, 1600);
 })();
+
+
+
+/* ============================================
+4. SKILL BAR ANIMATION
+============================================ */
+/* Animate one skill bar */
+function animateSkillBar(fillEl) {
+const targetWidth =
+parseInt(fillEl.dataset.width, 10) || 0;
+requestAnimationFrame(() => {
+fillEl.style.width = targetWidth + "%";
+});
+}
+/* Check if element is visible */
+function isInViewport(el) {
+const rect = el.getBoundingClientRect();
+return (
+rect.top < window.innerHeight &&
+rect.bottom > 0
+);
+}
+/* Animate bars already visible on page load */
+(function animateInitialBars() {
+function tryAnimate() {
+qsa(".skill-bar__fill").forEach(bar => {
+if (isInViewport(bar)) {
+animateSkillBar(bar);
+}
+});
+}
+if (document.readyState === "loading") {
+document.addEventListener(
+"DOMContentLoaded",
+tryAnimate);
+} else {
+tryAnimate();
+}
+})();
