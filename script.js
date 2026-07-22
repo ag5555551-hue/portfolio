@@ -101,3 +101,48 @@ document.body.style.overflow = "";
 })();
 
 
+/* ============================================
+3.  ANIMATION
+============================================ */
+(function initTyping() {
+const el = qs("#typedText");
+if (!el) return;
+const phrases = [
+"Frontend Web Developer",
+"UI/UX Enthusiast",
+"Clean Code Advocate",
+"Responsive Design Expert",
+"Freelance Developer"
+ ];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const TYPE_SPEED = 80;
+const DELETE_SPEED = 40;
+const PAUSE_END = 2000;
+const PAUSE_START = 400;
+function tick() {
+const phrase = phrases[phraseIndex];
+if (isDeleting) {
+charIndex--;
+el.textContent = phrase.slice(0, charIndex);
+if (charIndex === 0) {
+isDeleting = false;
+phraseIndex = (phraseIndex + 1) % phrases.length;
+setTimeout(tick, PAUSE_START);
+return;
+}
+setTimeout(tick, DELETE_SPEED);
+} else {
+charIndex++;
+el.textContent = phrase.slice(0, charIndex);
+if (charIndex === phrase.length) {
+isDeleting = true;
+setTimeout(tick, PAUSE_END);
+return;
+}
+setTimeout(tick, TYPE_SPEED);
+}
+}
+setTimeout(tick, 1600);
+})();
