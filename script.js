@@ -43,7 +43,7 @@ window.addEventListener("load", hidePreloader);
 })();
 /* ============================================
 2. NAVBAR
-============================================ */
+============================================ 
 (function initNavbar() {
 const navbar = qs("#navbar");
 const hamburger = qs("#hamburger");
@@ -75,7 +75,7 @@ window.addEventListener("scroll", onScroll, {
 passive: true
 });
 onScroll();
-/* Mobile Menu */
+/* Mobile Menu 
 if (hamburger && navMenu) {
 hamburger.addEventListener("click", () => {
 const isOpen = hamburger.classList.toggle("open");
@@ -106,7 +106,7 @@ document.body.style.overflow = "";
 
 /* ============================================
 3.  ANIMATION
-============================================ */
+============================================ 
 (function initTyping() {
 const el = qs("#typedText");
 if (!el) return;
@@ -154,8 +154,8 @@ setTimeout(tick, 1600);
 
 /* ============================================
 4. SKILL BAR ANIMATION
-============================================ */
-/* Animate one skill bar */
+============================================ 
+/* Animate one skill bar 
 function animateSkillBar(fillEl) {
 const targetWidth =
 parseInt(fillEl.dataset.width, 10) || 0;
@@ -163,7 +163,7 @@ requestAnimationFrame(() => {
 fillEl.style.width = targetWidth + "%";
 });
 }
-/* Check if element is visible */
+/* Check if element is visible 
 function isInViewport(el) {
 const rect = el.getBoundingClientRect();
 return (
@@ -171,7 +171,7 @@ rect.top < window.innerHeight &&
 rect.bottom > 0
 );
 }
-/* Animate bars already visible on page load */
+/* Animate bars already visible on page load 
 (function animateInitialBars() {
 function tryAnimate() {
 qsa(".skill-bar__fill").forEach(bar => {
@@ -193,7 +193,7 @@ tryAnimate();
 
 /* ============================================
    5. SCROLL REVEAL ANIMATIONS
-============================================ */
+============================================ 
 (function initScrollReveal() {
   const prefersReduced =
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
