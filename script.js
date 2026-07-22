@@ -501,7 +501,7 @@ card.classList.toggle("focused");
 })();
 /* ============================================
 17. LOADED MESSAGE
-============================================ */
+============================================ 
 console.log(
 "%c Ayush Portfolio — Loaded ✓ ",
 "background:#2563eb;color:#fff;font-weight:bold;padding:4px 8px;border-radius:4px;"
