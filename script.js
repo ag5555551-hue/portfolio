@@ -279,7 +279,7 @@ applyTheme(e.matches ?
 })();
 /* ============================================
 7. SCROLL TO TOP BUTTON
-============================================ */
+============================================ 
 function toggleScrollTopBtn() {
 if (!scrollTopBtn) return;
 scrollTopBtn.classList.toggle(
@@ -297,13 +297,13 @@ behavior: "smooth"
 }
 /* ============================================
 8. SMOOTH SCROLL
-============================================ */
+============================================ 
 (function initSmoothScroll() {
 document.addEventListener("click", (e) => {
 const anchor = e.target.closest('a[href^="#"]');
 if (!anchor) return;
 const targetId = anchor.getAttribute("href").slice(1);
-/* href="#" → Scroll to top */
+/* href="#" → Scroll to top 
 if (!targetId) {
 e.preventDefault();
 window.scrollTo({
@@ -332,7 +332,7 @@ behavior: "smooth"
 })();
 /* ============================================
 9. CONTACT FORM
-============================================ */
+============================================ 
 (function initContactForm() {
 const form = qs("#contactForm");
 const submitBtn = qs("#submitBtn");
@@ -382,7 +382,7 @@ msg = "Message must be at least 10 characters.";
 input.classList.toggle("error", !!msg);
 /* ============================================
 10. FOOTER YEAR
-============================================== */
+============================================== 
 (function setYear() {
 const el = qs("#year");
 if (el) {
@@ -391,7 +391,7 @@ el.textContent = new Date().getFullYear();
 })();
 /* ===============================================
 11. HERO CARD TILT EFFECT
-============================================== */
+============================================== 
 (function initTiltEffect() {
 const card = qs(".hero__card");
 if (!card) return;
@@ -417,7 +417,7 @@ card.style.transition = "";
 })();
 /* ============================================
 12. STAT CHIPS ANIMATION
-============================================ */
+============================================ 
 (function animateStats() {
 const stats = qsa(".hero__stat");
 stats.forEach((stat, i) => {
@@ -433,7 +433,7 @@ stat.style.transform = "scale(1)";
 })();
 /* ============================================
 13. INITIAL ACTIVE NAV LINK
-============================================ */
+============================================ 
 (function setInitialActiveLink() {
 const hiddenash = window.location.hash.slice(1);
 if (!hash) return;
@@ -447,7 +447,7 @@ link.classList.add("active");
 })();
 /* ============================================
 14. NUMBER COUNTER ANIMATION
-============================================ */
+============================================ 
 function animateCounter(el, to, duration = 1200) {
 const start = Date.now();
 const from = parseInt(el.textContent, 10) || 0;
@@ -468,7 +468,7 @@ requestAnimationFrame(step);
 }
 /* ============================================
 15. PROJECT CARD SHIMMER
-============================================ */
+============================================ 
 (function initCardShimmer() {
 qsa(".project-card").forEach(card => {
 card.addEventListener("mousemove", (e) => {
@@ -488,7 +488,7 @@ card.style.setProperty("--mouse-y", y + "%");
 })();
 /* ============================================
 16. SERVICE CARD ACCESSIBILITY
-============================================ */
+============================================ 
 (function initServiceCardA11y() {
 qsa(".service-card").forEach(card => {
 card.setAttribute("tabindex", "0");
