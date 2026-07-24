@@ -361,6 +361,11 @@ behavior: "smooth"
               9. CONTACT FORM
 ============================================ */
 
+
+emailjs.init({
+  publicKey: "xigsG-OrKh4AhyA8Z",
+});
+
 (function initContactForm() {
 
   const form = qs("#contactForm");
@@ -444,16 +449,51 @@ behavior: "smooth"
     if (!valid) return;
 
     submitBtn.disabled = true;
+    
+    const btnText = submitBtn.querySelector(".btn-text");
+const btnLoading = submitBtn.querySelector(".btn-loading");
 
-    setTimeout(() => {
+btnText.hidden = true;
+btnLoading.hidden = false;
+    
+    
+    emailjs.send(
+  "portfolio_service",
+  "template_3muuuvm",
+  {
+    name: fields.name.el.value,
+    email: fields.email.el.value,
+    message: fields.message.el.value,
+    time: new Date().toLocaleString()
+  }
+)
+.then(() => {
 
-      form.hidden = true;
-      success.hidden = false;
+  btnText.hidden = false;
+  btnLoading.hidden = true;
+  
+  form.hidden = true;
+  success.hidden = false;
 
-    }, 1000);
+})
+.catch((error) => {
 
-  });
+  console.error(error);
 
+  btnText.hidden = false;
+  btnLoading.hidden = true;
+  
+  alert("❌ Message send failed. Please try again.");
+
+})
+.finally(() => {
+
+  submitBtn.disabled = false;
+  btnText.hidden = false;
+  btnLoading.hidden = true;
+});
+    
+})();
 })();
 
 
